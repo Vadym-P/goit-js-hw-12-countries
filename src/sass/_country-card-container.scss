@@ -1,0 +1,32 @@
+.card {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 670px;
+    margin: 0 auto;
+}
+
+.card-body {
+    margin-right: 20px;
+}
+
+.country {
+    font-size: 36px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.card-img-flag {
+    display: block;
+    width: 350px;
+}
+
+.languages-list__item {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
