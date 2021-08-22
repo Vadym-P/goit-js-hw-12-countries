@@ -43,7 +43,7 @@ function renderCountryCard(country) {
   }
 }
 
-function onError() {
+function onError(error) {
   error({
     title: `There no such country. Try again!`,
     styling: 'brighttheme',
