@@ -6,7 +6,7 @@ import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/desktop/dist/PNotifyDesktop';
 import '@pnotify/core/dist/BrightTheme.css';
 import { error } from '@pnotify/core';
-const debounce = require('lodash.debounce');
+import debounce from 'lodash.debounce';
 
 const refs = {
   cardContainer: document.querySelector('.js-card-container'),
@@ -16,9 +16,9 @@ const refs = {
 refs.input.addEventListener('input', debounce(onInput, 500));
 
 function onInput(e) {
-  let searchCountryValue = e.target.value.toLowerCase();
+  let searchCountryValue = e.target.value.toLowerCase().trim();
   if (searchCountryValue !== '') {
-    API.fetchCountries(searchCountryValue).then(renderCountryCard).catch(onError);
+    API.fetchCountries(searchCountryValue).then(renderCountryCard);
   } else {
     refs.cardContainer.innerHTML = '';
   }
@@ -41,12 +41,4 @@ function renderCountryCard(country) {
       delay: 3000,
     });
   }
-}
-
-function onError(error) {
-  error({
-    title: `There no such country. Try again!`,
-    styling: 'brighttheme',
-    delay: 3000,
-  });
 }
